@@ -18,7 +18,27 @@ dist/
 
 ## 🌐 Deployment Options
 
-### 1. **Netlify (Recommended - Free)**
+### 1. **Vercel (Recommended - Free) ✅ FIXED**
+
+**The build error has been resolved!**
+
+**Steps:**
+1. Go to [vercel.com](https://vercel.com)
+2. Sign up/login with GitHub
+3. Import your GitHub repository
+4. Vercel will auto-detect Vite and deploy automatically
+
+**Build Settings (Auto-detected):**
+- Build Command: `npm run build`
+- Output Directory: `dist`
+- Node.js Version: 18.x
+
+**Environment Variables (Optional for Email):**
+- `VITE_EMAILJS_PUBLIC_KEY`
+- `VITE_EMAILJS_SERVICE_ID`
+- `VITE_EMAILJS_TEMPLATE_ID`
+
+### 2. **Netlify (Free)**
 
 **Steps:**
 1. Go to [netlify.com](https://netlify.com)
@@ -29,18 +49,6 @@ dist/
 **Custom Domain:**
 - Add your custom domain in Netlify settings
 - Netlify provides free SSL certificates
-
-### 2. **Vercel (Free)**
-
-**Steps:**
-1. Go to [vercel.com](https://vercel.com)
-2. Sign up/login with GitHub
-3. Import your GitHub repository
-4. Vercel will auto-detect Vite and deploy
-
-**Build Settings:**
-- Build Command: `npm run build`
-- Output Directory: `dist`
 
 ### 3. **GitHub Pages (Free) - FIXED**
 

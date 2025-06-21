@@ -4,5 +4,7 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: import.meta.env.VITE_BASE_PATH || "/react-vite-deploy",
+  // Use root path for Vercel and most platforms
+  // For GitHub Pages, manually change this to '/Portfolio/'
+  base: '/',
 })
