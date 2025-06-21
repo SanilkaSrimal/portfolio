@@ -42,35 +42,28 @@ dist/
 - Build Command: `npm run build`
 - Output Directory: `dist`
 
-### 3. **GitHub Pages (Free)**
+### 3. **GitHub Pages (Free) - FIXED**
+
+**Important:** The Vite config has been updated to fix the GitHub Pages path issue!
 
 **Steps:**
-1. Create a new repository on GitHub
-2. Upload your project files
+1. Create a new repository on GitHub named "Portfolio" (or update `vite.config.js` with your repo name)
+2. Upload your project files to the repository
 3. Go to Settings → Pages
 4. Select "GitHub Actions" as source
-5. Create `.github/workflows/deploy.yml`:
+5. The `.github/workflows/deploy.yml` file is already created for you!
 
-```yaml
-name: Deploy to GitHub Pages
-on:
-  push:
-    branches: [ main ]
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v2
-      with:
-        node-version: '18'
-    - run: npm install
-    - run: npm run build
-    - uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist
-```
+**Environment Variables for GitHub Pages:**
+1. Go to Settings → Secrets and variables → Actions
+2. Add repository secrets:
+   - `VITE_EMAILJS_PUBLIC_KEY`
+   - `VITE_EMAILJS_SERVICE_ID`
+   - `VITE_EMAILJS_TEMPLATE_ID`
+
+**The workflow will automatically:**
+- Build your project on every push to main
+- Deploy to GitHub Pages
+- Include your environment variables
 
 ### 4. **Firebase Hosting (Free)**
 
