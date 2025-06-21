@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import emailjs from '@emailjs/browser';
 import "./Contact.css";
 
 const Contact = () => {
@@ -11,6 +12,15 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState("");
 
+  // Initialize EmailJS
+  useEffect(() => {
+    // Initialize EmailJS with public key from environment variables
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+    if (publicKey) {
+      emailjs.init(publicKey);
+    }
+  }, []);
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -21,17 +31,54 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus("");
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitStatus("success");
-      setFormData({ name: "", email: "", subject: "", message: "" });
+    try {
+      // EmailJS configuration from environment variables
+      const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+
+      if (!serviceID || !templateID) {
+        throw new Error('EmailJS configuration missing');
+      }
+
+      // Template parameters
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_email: 'dilmijayanetthi66@gmail.com', // Your email
+        reply_to: formData.email,
+      };
+
+      // Send email
+      const result = await emailjs.send(serviceID, templateID, templateParams);
+
+      if (result.status === 200) {
+        setSubmitStatus("success");
+        setFormData({ name: "", email: "", subject: "", message: "" });
+
+        setTimeout(() => {
+          setSubmitStatus("");
+        }, 5000);
+      }
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+
+      // If EmailJS is not configured, show a helpful message
+      if (error.message === 'EmailJS configuration missing') {
+        setSubmitStatus("config");
+      } else {
+        setSubmitStatus("error");
+      }
 
       setTimeout(() => {
         setSubmitStatus("");
-      }, 3000);
-    }, 1000);
+      }, 8000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -68,6 +115,9 @@ const Contact = () => {
           <h2>Get In Touch</h2>
           <p className="section-subtitle">
             Let's work together on your next project
+          </p>
+          <p className="email-info">
+            📧 Messages sent through this form will be delivered directly to my email inbox
           </p>
         </div>
 
@@ -185,7 +235,19 @@ const Contact = () => {
 
               {submitStatus === "success" && (
                 <div className="success-message">
-                  Thank you! Your message has been sent successfully.
+                  ✅ Thank you! Your message has been sent successfully. I'll get back to you soon!
+                </div>
+              )}
+
+              {submitStatus === "error" && (
+                <div className="error-message">
+                  ❌ Sorry, there was an error sending your message. Please try again or email me directly.
+                </div>
+              )}
+
+              {submitStatus === "config" && (
+                <div className="config-message">
+                  ⚙️ Email service is being configured. Please email me directly at dilmijayanetthi66@gmail.com for now.
                 </div>
               )}
             </form>

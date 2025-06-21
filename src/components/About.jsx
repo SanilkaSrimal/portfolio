@@ -1,52 +1,89 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
+import { useCustomCursor } from "../hooks/useCustomCursor";
 import "./About.css";
+import "./CustomCursor.css";
 
 const About = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const aboutRef = useRef();
+  const headerRef = useScrollAnimation("fadeInUp");
+  const textRef = useScrollAnimation("fadeInLeft");
+  const statsRef = useScrollAnimation("fadeInUp");
+
+  // Initialize custom cursor
+  useCustomCursor();
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (aboutRef.current) {
+      observer.observe(aboutRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="about" className="about">
+    <section id="about" className="about" ref={aboutRef}>
       <div className="container">
-        <div className="section-header">
+        <div className="section-header" ref={headerRef}>
           <h2>About Me</h2>
           <p className="section-subtitle">Get to know me better</p>
         </div>
 
         <div className="about-content">
-          <div className="about-text-full">
-            <h3>Hello! I'm Dilmi Jayanetthi</h3>
-            <p>
-              I'm a passionate and versatile Full Stack Developer with hands-on
-              experience in building dynamic web applications using MERN Stack,
-              Java Spring Boot, TypeScript, and more. Currently pursuing my BSc
-              in Information Technology at SLIIT, I thrive in full project
-              lifecycles—from designing responsive frontends to developing
-              scalable backend APIs.
-            </p>
-            <p>
-              I've worked with Thuli Software (Jaffna) and currently contribute
-              to exciting projects like POS systems and EZCart at EONTECH Pvt
-              Ltd (Galle). I bring strong skills in object-oriented programming,
-              real-time systems, and project management, always aiming for
-              creative and efficient solutions.
-            </p>
-            <p>
-              <strong>Languages:</strong> English (Fluent), Sinhala (Fluent),
-              Japanese (Good - JLPT N4 & N5)
-            </p>
-            <p>
-              <strong>Soft Skills:</strong> Time Management, Creativity, Team
-              Collaboration, Problem Solving, Communication
-            </p>
+          <div className="about-text-full" ref={textRef}>
+            <h3 className="about-title">
+              Hello! I'm Dilmi Jayanetthi
+            </h3>
 
-            <div className="about-stats">
-              <div className="stat">
+            <div className="about-description">
+              <p className="slide-in-text">
+                I'm a passionate and versatile Full Stack Developer with hands-on
+                experience in building dynamic web applications using MERN Stack,
+                Java Spring Boot, TypeScript, and more. Currently pursuing my BSc
+                in Information Technology at SLIIT, I thrive in full project
+                lifecycles—from designing responsive frontends to developing
+                scalable backend APIs.
+              </p>
+              <p className="slide-in-text delay-1">
+                I've worked with Thuli Software (Jaffna) and currently contribute
+                to exciting projects like POS systems and EZCart at EONTECH Pvt
+                Ltd (Galle). I bring strong skills in object-oriented programming,
+                real-time systems, and project management, always aiming for
+                creative and efficient solutions.
+              </p>
+              <p className="slide-in-text delay-2">
+                <strong>Languages:</strong> English (Fluent), Sinhala (Fluent),
+                Japanese (Good - JLPT N4 & N5)
+              </p>
+              <p className="slide-in-text delay-3">
+                <strong>Soft Skills:</strong> Time Management, Creativity, Team
+                Collaboration, Problem Solving, Communication
+              </p>
+            </div>
+
+            <div className="about-stats" ref={statsRef}>
+              <div className="stat hover-effect" data-cursor="pointer">
+                <div className="stat-icon">🚀</div>
                 <h4>5+</h4>
                 <p>Projects Completed</p>
               </div>
-              <div className="stat">
+              <div className="stat hover-effect" data-cursor="pointer">
+                <div className="stat-icon">💼</div>
                 <h4>2+</h4>
                 <p>Years Experience</p>
               </div>
-              <div className="stat">
+              <div className="stat hover-effect" data-cursor="pointer">
+                <div className="stat-icon">🌍</div>
                 <h4>3</h4>
                 <p>Languages Spoken</p>
               </div>
