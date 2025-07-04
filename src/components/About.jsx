@@ -42,7 +42,7 @@ const About = () => {
         <div className="about-content">
           <div className="about-text-full" ref={textRef}>
             <h3 className="about-title">
-              Hello! I'm Dilmi Jayanetthi
+              Hello! I'm Shanilka Srimal
             </h3>
 
             <div className="about-description">
@@ -55,15 +55,12 @@ const About = () => {
                 scalable backend APIs.
               </p>
               <p className="slide-in-text delay-1">
-                I've worked with Thuli Software (Jaffna) and currently contribute
-                to exciting projects like POS systems and EZCart at EONTECH Pvt
-                Ltd (Galle). I bring strong skills in object-oriented programming,
+                I bring strong skills in object-oriented programming,
                 real-time systems, and project management, always aiming for
                 creative and efficient solutions.
               </p>
               <p className="slide-in-text delay-2">
-                <strong>Languages:</strong> English (Fluent), Sinhala (Fluent),
-                Japanese (Good - JLPT N4 & N5)
+                <strong>Languages:</strong> English (Fluent), Sinhala (Fluent)
               </p>
               <p className="slide-in-text delay-3">
                 <strong>Soft Skills:</strong> Time Management, Creativity, Team
@@ -84,7 +81,7 @@ const About = () => {
               </div>
               <div className="stat hover-effect" data-cursor="pointer">
                 <div className="stat-icon">🌍</div>
-                <h4>3</h4>
+                <h4>2</h4>
                 <p>Languages Spoken</p>
               </div>
             </div>

@@ -13,57 +13,48 @@ const Projects = () => {
       id: 1,
       title: "E-Commerce Website",
       description:
-        "A modern e-commerce platform with user authentication, product catalog, shopping cart, and order management. Built with responsive design and modern web technologies.",
+        "A modern e-commerce platform with user authentication, Live chat box, user management, and slary management. Built with responsive design and modern web technologies.",
       image:
         "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&h=980&q=80",
       technologies: ["React", "Node.js", "MongoDB", "Express.js"],
       category: "fullstack",
-      githubUrl: "https://github.com/DilmiJ/e-com-website",
+      githubUrl: "https://github.com/SanilkaSrimal/ITP80-",
     },
     {
       id: 2,
       title: "Skill Sharing Platform",
       description:
-        "A React + Spring Boot-based social application for skill exchange. Features user authentication, skill matching, and real-time communication between users looking to share and learn skills.",
+        "A React + Spring Boot-based social application for skill exchange. Features user authentication, monetization management and real-time communication between users looking to share and learn skills.",
       image:
         "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&h=980&q=80",
       technologies: ["React", "Spring Boot", "Java", "MySQL"],
       category: "fullstack",
-      githubUrl: "https://github.com/DilmiJ/skill-sharing-platform",
+      githubUrl: "https://github.com/KalpaVidusha/skill-sharing-platform",
     },
     {
       id: 3,
       title: "Online Computer Store",
       description:
-        "MERN-based inventory and quotation management system for computer hardware. Includes product catalog, inventory tracking, quotation generation, and order management.",
+        "MERN-based user and salary management system for computer hardware. Includes product catalog, inventory tracking, quotation generation, and order management.Built with responsive design and modern web technologies.",
       image:
         "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1526&h=980&q=80",
       technologies: ["MongoDB", "Express.js", "React", "Node.js"],
       category: "fullstack",
-      githubUrl: "https://github.com/DilmiJ/Online-computer-store---MERN-",
+      githubUrl: "https://github.com/Buwaneka99/Ecommerce-Computer-Store",
     },
     {
       id: 4,
-      title: "Candy Crush Game",
+      title: "Online market place",
       description:
-        "A fun and interactive Candy Crush game built with modern web technologies. Features colorful graphics, smooth animations, score tracking, and engaging gameplay mechanics.",
+        "A feature-rich online marketplace built using PHP, designed to streamline user and employee salary management. The platform supports a dynamic product catalog, real-time inventory tracking, quotation generation, and efficient order processing. With a responsive design and integration of modern web technologies, the system delivers a smooth, accessible experience across all devices—optimizing operations for both administrators and customers."
+,
       image:
         "https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&h=980&q=80",
-      technologies: ["JavaScript", "HTML5", "CSS3", "Canvas"],
+      technologies: ["PHP", "HTML5", "CSS3"],
       category: "frontend",
-      githubUrl: "https://github.com/DilmiJ/candy-crush",
+      githubUrl: "https://github.com/SanilkaSrimal/Online-marketplace",
     },
-    {
-      id: 5,
-      title: "Todo App",
-      description:
-        "A clean and intuitive todo application for task management. Features include adding, editing, deleting tasks, marking as complete, and local storage for data persistence.",
-      image:
-        "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&h=980&q=80",
-      technologies: ["React", "JavaScript", "CSS3", "Local Storage"],
-      category: "frontend",
-      githubUrl: "https://github.com/DilmiJ/Todo-app",
-    },
+    
   ];
 
   const categories = [

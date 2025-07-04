@@ -13,7 +13,7 @@ const Footer = () => {
       <div className="container">
         <div className="footer-content">
           <div className="footer-section">
-            <h3>Dilmi Jayanetthi</h3>
+            <h3>Shanilka Srimal</h3>
             <p>
               Thank you for visiting my portfolio. I'm always excited to work on
               new projects and collaborate with amazing people. Let's build
@@ -46,7 +46,7 @@ const Footer = () => {
             <h4>Connect</h4>
             <div className="footer-social">
               <a
-                href="https://github.com/DilmiJ"
+                href="https://github.com/SanilkaSrimal"
                 className="social-link"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -54,7 +54,7 @@ const Footer = () => {
                 GitHub
               </a>
               <a
-                href="https://www.linkedin.com/in/dilmijayanetthi/"
+                href="https://www.linkedin.com/in/sanilka-srimal-841b692b3/"
                 className="social-link"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -62,12 +62,12 @@ const Footer = () => {
                 LinkedIn
               </a>
               <a
-                href="mailto:dilmijayanetthi66@gmail.com"
+                href="mailto:sanilkasrimal01@gmail.com"
                 className="social-link"
               >
                 Email
               </a>
-              <a href="tel:+94764199842" className="social-link">
+              <a href="tel:+94712449676" className="social-link">
                 Call
               </a>
             </div>
@@ -76,7 +76,7 @@ const Footer = () => {
 
         <div className="footer-bottom">
           <div className="footer-copyright">
-            <p>&copy; {currentYear} Dilmi Jayanetthi. All rights reserved.</p>
+            <p>&copy; {currentYear} Shanilka Srimal. All rights reserved.</p>
           </div>
           <button className="back-to-top" onClick={scrollToTop}>
             ↑ Back to Top

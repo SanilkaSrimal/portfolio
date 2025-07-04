@@ -48,7 +48,7 @@ const Contact = () => {
         from_email: formData.email,
         subject: formData.subject,
         message: formData.message,
-        to_email: 'dilmijayanetthi66@gmail.com', // Your email
+        to_email: 'sanilkasrima01@gmail.com', // Your email
         reply_to: formData.email,
       };
 
@@ -85,26 +85,26 @@ const Contact = () => {
     {
       icon: "📧",
       title: "Email",
-      value: "dilmijayanetthi66@gmail.com",
-      link: "mailto:dilmijayanetthi66@gmail.com",
+      value: "sanilkasrimal01@gmail.com",
+      link: "mailto:sanilkasrimal01@gmail.com",
     },
     {
       icon: "📱",
       title: "Phone",
-      value: "+94 764 199 842",
-      link: "tel:+94764199842",
+      value: "+94 712 449 676",
+      link: "tel:+94712449676",
     },
     {
       icon: "📍",
       title: "Location",
-      value: "Unawatuna, Sri Lanka",
+      value: "Trincomalee, Sri Lanka",
       link: "#",
     },
     {
       icon: "💼",
       title: "LinkedIn",
       value: "LinkedIn Profile",
-      link: "https://www.linkedin.com/in/dilmijayanetthi/",
+      link: "https://www.linkedin.com/in/sanilka-srimal-841b692b3/",
     },
   ];
 
@@ -151,7 +151,7 @@ const Contact = () => {
               <h4>Connect with me:</h4>
               <div className="social-icons">
                 <a
-                  href="https://github.com/DilmiJ"
+                  href="https://github.com/SanilkaSrimal"
                   className="social-link"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -159,7 +159,7 @@ const Contact = () => {
                   GitHub
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/dilmijayanetthi/"
+                  href="https://www.linkedin.com/in/sanilka-srimal-841b692b3/"
                   className="social-link"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -167,12 +167,12 @@ const Contact = () => {
                   LinkedIn
                 </a>
                 <a
-                  href="mailto:dilmijayanetthi66@gmail.com"
+                  href="mailto:sanilkasrimal01@gmail.com"
                   className="social-link"
                 >
                   Email
                 </a>
-                <a href="tel:+94764199842" className="social-link">
+                <a href="tel:+94712449676" className="social-link">
                   Call
                 </a>
               </div>
