@@ -4,6 +4,9 @@ import {
   useStaggerAnimation,
 } from "../hooks/useScrollAnimation";
 import "./Projects.css";
+import market_place from "../assets/mp.jpeg";
+import computer_store from "../assets/computerstore.png";
+import skill from "../assets/ss.jpeg";
 
 const Projects = () => {
   const [filter, setFilter] = useState("all");
@@ -25,8 +28,7 @@ const Projects = () => {
       title: "Skill Sharing Platform",
       description:
         "A React + Spring Boot-based social application for skill exchange. Features user authentication, monetization management and real-time communication between users looking to share and learn skills.",
-      image:
-        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&h=980&q=80",
+      image:skill,
       technologies: ["React", "Spring Boot", "Java", "MySQL"],
       category: "fullstack",
       githubUrl: "https://github.com/KalpaVidusha/skill-sharing-platform",
@@ -36,8 +38,7 @@ const Projects = () => {
       title: "Online Computer Store",
       description:
         "MERN-based user and salary management system for computer hardware. Includes product catalog, inventory tracking, quotation generation, and order management.Built with responsive design and modern web technologies.",
-      image:
-        "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1526&h=980&q=80",
+      image:computer_store,
       technologies: ["MongoDB", "Express.js", "React", "Node.js"],
       category: "fullstack",
       githubUrl: "https://github.com/Buwaneka99/Ecommerce-Computer-Store",
@@ -48,9 +49,8 @@ const Projects = () => {
       description:
         "A feature-rich online marketplace built using PHP, designed to streamline user and employee salary management. The platform supports a dynamic product catalog, real-time inventory tracking, quotation generation, and efficient order processing. With a responsive design and integration of modern web technologies, the system delivers a smooth, accessible experience across all devices—optimizing operations for both administrators and customers."
 ,
-      image:
-        "https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&h=980&q=80",
-      technologies: ["PHP", "HTML5", "CSS3"],
+      image:market_place,
+      technologies: ["PHP", "HTML5", "CSS3","Sql"],
       category: "frontend",
       githubUrl: "https://github.com/SanilkaSrimal/Online-marketplace",
     },
