@@ -97,7 +97,7 @@ const Contact = () => {
     {
       icon: "📍",
       title: "Location",
-      value: "Malabe, Sri Lanka",
+      value: ", Sri Lanka",
       link: "#",
     },
     {
