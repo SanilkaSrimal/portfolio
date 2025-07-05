@@ -1,96 +1,100 @@
-/* Custom Cursor Styles */
+/* Core Custom Cursor Styles */
 .custom-cursor {
   position: fixed;
   top: 0;
   left: 0;
-  width: 20px;
-  height: 20px;
-  background: var(--primary-color);
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border: 2px solid var(--primary-color);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
-  transition: all 0.15s ease-out;
-  opacity: 0.8;
+  transition: width 0.2s ease, height 0.2s ease, transform 0.1s ease;
+  mix-blend-mode: difference;
+  will-change: transform;
 }
 
 .custom-cursor-dot {
   position: fixed;
   top: 0;
   left: 0;
-  width: 4px;
-  height: 4px;
-  background: var(--text-primary);
+  width: 6px;
+  height: 6px;
+  background-color: var(--primary-color);
   border-radius: 50%;
   pointer-events: none;
   z-index: 10000;
-  transition: all 0.0s ease-out;
+  transition: transform 0.1s ease, background-color 0.2s ease;
+  mix-blend-mode: difference;
 }
 
-/* Hover states */
+/* Hover State */
 .custom-cursor.cursor-hover {
   width: 40px;
   height: 40px;
-  background: rgba(59, 130, 246, 0.2);
-  border: 2px solid var(--primary-color);
+  border: 2px solid var(--accent-color);
+  background: rgba(59, 130, 246, 0.08);
+  transform: scale(1.1);
 }
 
 .custom-cursor-dot.cursor-hover {
-  width: 8px;
-  height: 8px;
-  background: var(--primary-color);
+  transform: scale(1.4);
+  background-color: var(--accent-color);
 }
 
-/* Click states */
+/* Click State */
 .custom-cursor.cursor-click {
-  transform: scale(0.7);
-  background: var(--accent-color);
+  transform: scale(0.8);
+  background: rgba(236, 72, 153, 0.2); /* pink-500 as sample accent */
+  border-color: var(--accent-color);
 }
 
 .custom-cursor-dot.cursor-click {
-  transform: scale(1.5);
-  background: var(--accent-color);
+  transform: scale(2);
+  background-color: var(--accent-color);
 }
 
-/* Hide default cursor on desktop */
+/* Smooth Motion for Desktop */
 @media (min-width: 769px) {
   * {
     cursor: none !important;
   }
-  
+
   a, button, [data-cursor="pointer"], .hover-effect {
     cursor: none !important;
   }
 }
 
-/* Show default cursor on mobile */
+/* Mobile: Show Default Cursor */
 @media (max-width: 768px) {
   .custom-cursor,
   .custom-cursor-dot {
     display: none !important;
   }
-  
+
   * {
     cursor: auto !important;
   }
 }
 
-/* Dark theme adjustments */
+/* Dark Theme Enhancements */
 .dark-theme .custom-cursor {
   border-color: var(--primary-color);
   mix-blend-mode: normal;
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .dark-theme .custom-cursor-dot {
-  background: var(--primary-color);
+  background-color: var(--primary-color);
+  mix-blend-mode: normal;
 }
 
 .dark-theme .custom-cursor.cursor-hover {
+  background: rgba(147, 197, 253, 0.1); /* sky-300 */
   border-color: var(--accent-color);
-  background: rgba(96, 165, 250, 0.1);
 }
 
 .dark-theme .custom-cursor-dot.cursor-hover {
-  background: var(--accent-color);
+  background-color: var(--accent-color);
 }
-
-
