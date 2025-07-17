@@ -125,7 +125,7 @@ const Hero = () => {
         <div className="hero-content">
           <div className="hero-text">
             <h1 ref={titleRef}>
-              Hi, I'm <span className="highlight">Sumali Dissanayake</span>
+              Hi, I'm <span className="highlight">Sumali Dissanayake.</span>
             </h1>
             <h2 className="hero-subtitle" ref={typingRef}></h2>
             <p className="hero-description" ref={descriptionRef}>
